@@ -1,0 +1,38 @@
+{
+    "resultCount": 1,
+    "results": [
+                {
+                "wrapperType": "track",
+                "kind": "song",
+                "artistId": 41295873,
+                "collectionId": 256412784,
+                "trackId": 256412807,
+                "artistName": "コブクロ",
+                "collectionName": "NAMELESS WORLD",
+                "trackName": "桜",
+                "collectionCensoredName": "NAMELESS WORLD",
+                "trackCensoredName": "桜",
+                "artistViewUrl": "https://itunes.apple.com/jp/artist/%E3%82%B3%E3%83%96%E3%82%AF%E3%83%AD/id41295873?uo=4",
+                "collectionViewUrl": "https://itunes.apple.com/jp/album/%E6%A1%9C/id256412784?i=256412807&uo=4",
+                "trackViewUrl": "https://itunes.apple.com/jp/album/%E6%A1%9C/id256412784?i=256412807&uo=4",
+                "previewUrl": "https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/Music3/v4/4f/2c/f2/4f2cf267-25ec-447c-15a4-3bd332fa91e7/mzaf_7807542852188658446.plus.aac.p.m4a?accessKey=1516527194_4788297148101501719_GLjJw5lnxCyvDgSR6%2F4P90pwm8Q%2B6uBE3sVYz3eV5m4LdinpaCZdgh%2BU%2B%2BrU7Eb%2BAhHNOte%2FUNcrkq3EP%2Bstyseq0W9SEReAKfnLczkFGpuJdios5gOLpiHHOJxi%2FANbDqDOftRHJSyvtPmrkElHywDayYmLW6N35IVrzpJmpWckFaKlQjfXo4IlG5EhZLipwG1yUl%2FVDApByv3e5lhsnA%3D%3D",
+                "artworkUrl30": "http://is3.mzstatic.com/image/thumb/Music/v4/73/bd/7c/73bd7c40-2e85-d5a9-3549-5a8bbdabfb50/source/30x30bb.jpg",
+                "artworkUrl60": "http://is3.mzstatic.com/image/thumb/Music/v4/73/bd/7c/73bd7c40-2e85-d5a9-3549-5a8bbdabfb50/source/60x60bb.jpg",
+                "artworkUrl100": "http://is3.mzstatic.com/image/thumb/Music/v4/73/bd/7c/73bd7c40-2e85-d5a9-3549-5a8bbdabfb50/source/100x100bb.jpg",
+                "collectionPrice": 2100,
+                "trackPrice": 250,
+                "releaseDate": "2005-05-11T07:00:00Z",
+                "collectionExplicitness": "notExplicit",
+                "trackExplicitness": "notExplicit",
+                "discCount": 1,
+                "discNumber": 1,
+                "trackCount": 12,
+                "trackNumber": 2,
+                "trackTimeMillis": 361493,
+                "country": "JPN",
+                "currency": "JPY",
+                "primaryGenreName": "J-Pop",
+                "isStreamable": false
+                }
+                ]
+}
