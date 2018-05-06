@@ -30,7 +30,7 @@ final class ItunesSearchAPITests: XCTestCase {
         
         searchApi.load(term: "AAA")
         
-        waitForExpectations(timeout: 1.0) { error in
+        waitForExpectations(timeout: 2.0) { error in
             if let error = error {
                 XCTFail("waitForExpectationsエラー: \(error)")
             }

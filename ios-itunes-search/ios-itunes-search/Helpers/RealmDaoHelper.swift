@@ -6,6 +6,7 @@
 //  Copyright © 2017年 Okudera Yuki. All rights reserved.
 //
 
+import Foundation
 import RealmSwift
 
 final class RealmDaoHelper <T: RealmSwift.Object> {

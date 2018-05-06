@@ -32,7 +32,7 @@ final class APIClient {
     static func request(router: Router,
                         completionHandler: @escaping (Result) -> () = {_ in}) {
         
-        Alamofire.request(router).responseJSON() { (response) in
+        Alamofire.request(router).responseData() { (response) in
             
             let statusCode = response.response?.statusCode
             print("HTTP status code: \(String(describing: statusCode))")

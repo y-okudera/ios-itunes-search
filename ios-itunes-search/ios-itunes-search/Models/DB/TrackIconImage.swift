@@ -6,6 +6,7 @@
 //  Copyright © 2017年 YukiOkudera. All rights reserved.
 //
 
+import Foundation
 import RealmSwift
 
 final class TrackIconImage: Object {

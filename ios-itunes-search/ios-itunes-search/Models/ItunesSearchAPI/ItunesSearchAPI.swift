@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import ObjectMapper
 
 /// APIステータス
 enum ItunesSearchAPIStatus {
@@ -41,10 +40,15 @@ final class ItunesSearchAPI {
             
             switch result {
             case .success(let jsonData):
-                guard let tracks = Mapper<Tracks>().map(JSONObject: jsonData),
-                    tracks.resultCount != 0 else {
-                        self?.loadable?.setResult(result: .emptyData)
+                guard
+                    let jsonData = jsonData as? Data,
+                    let tracks = try? JSONDecoder().decode(Tracks.self, from: jsonData) else {
+                        self?.loadable?.setResult(result: .error)
                         return
+                }
+                if tracks.resultCount == 0 {
+                    self?.loadable?.setResult(result: .emptyData)
+                    return
                 }
                 self?.loadable?.setResult(result: .loaded(tracks: tracks))
                 
@@ -55,3 +59,4 @@ final class ItunesSearchAPI {
         }
     }
 }
+

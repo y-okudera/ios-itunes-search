@@ -7,7 +7,6 @@
 //
 
 import XCTest
-import ObjectMapper
 @testable import ios_itunes_search
 
 final class TrackTableViewCellTests: XCTestCase {
@@ -39,8 +38,9 @@ final class TrackTableViewCellTests: XCTestCase {
     func testTrackNameLabel() {
         
         let dummy = DummyResponse().searchApiJSONString()
-        let tracks = Mapper<Tracks>().map(JSONString: dummy)!
-        
+        let dummyData = dummy.data(using: .utf8)!
+        let tracks = try! JSONDecoder().decode(Tracks.self, from: dummyData)
+
         cell.item = tracks.results.first
         
         XCTAssertEqual(cell.trackNameLabel.text, "桜")

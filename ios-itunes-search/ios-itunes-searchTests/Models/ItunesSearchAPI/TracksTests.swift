@@ -7,7 +7,6 @@
 //
 
 import XCTest
-import ObjectMapper
 @testable import ios_itunes_search
 
 final class TracksTests: XCTestCase {
@@ -15,10 +14,12 @@ final class TracksTests: XCTestCase {
     func testMapping() {
         
         let dummy = DummyResponse().searchApiJSONString()
-        
-        guard let tracks = Mapper<Tracks>().map(JSONString: dummy) else {
-            XCTFail("Mapping failure.")
-            return
+
+        guard
+            let dummyData = dummy.data(using: .utf8),
+            let tracks = try? JSONDecoder().decode(Tracks.self, from: dummyData) else {
+                XCTFail("Mapping failure.")
+                return
         }
         
         XCTAssertEqual(tracks.resultCount, 1)
