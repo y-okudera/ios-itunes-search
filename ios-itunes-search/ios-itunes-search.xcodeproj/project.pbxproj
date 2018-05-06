@@ -21,6 +21,7 @@
 		B64758AC1F767256005BD438 /* ItunesSearchAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64758AB1F767256005BD438 /* ItunesSearchAPITests.swift */; };
 		B6576217209F57C9002883CF /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6F5CE40209F4FEF0077C9DC /* Realm.framework */; };
 		B6576218209F57C9002883CF /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6F5CE42209F4FEF0077C9DC /* RealmSwift.framework */; };
+		B657621A209F5E11002883CF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B6576219209F5E11002883CF /* Localizable.strings */; };
 		B678DBED1F758AAB0013A2E7 /* ItunesSearchParamsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678DBEC1F758AAB0013A2E7 /* ItunesSearchParamsBuilder.swift */; };
 		B678DBEF1F758B690013A2E7 /* ItunesSearchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678DBEE1F758B690013A2E7 /* ItunesSearchAPI.swift */; };
 		B678DBF11F758BE90013A2E7 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678DBF01F758BE90013A2E7 /* Track.swift */; };
@@ -67,6 +68,7 @@
 		B64758A61F765DFC005BD438 /* TracksTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracksTests.swift; sourceTree = "<group>"; };
 		B64758A91F7667D0005BD438 /* SpyItunesSearchLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyItunesSearchLoadable.swift; sourceTree = "<group>"; };
 		B64758AB1F767256005BD438 /* ItunesSearchAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItunesSearchAPITests.swift; sourceTree = "<group>"; };
+		B6576219209F5E11002883CF /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		B678DBE81F7586220013A2E7 /* RealmDaoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDaoHelper.swift; sourceTree = "<group>"; };
 		B678DBE91F7587E30013A2E7 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		B678DBEB1F7587E40013A2E7 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -306,9 +308,10 @@
 		B67CFFAA1F757B2700018FB4 /* Others */ = {
 			isa = PBXGroup;
 			children = (
-				B67CFF911F757A8800018FB4 /* Info.plist */,
-				B67CFF8C1F757A8800018FB4 /* Assets.xcassets */,
 				B67CFF851F757A8800018FB4 /* AppDelegate.swift */,
+				B67CFF8C1F757A8800018FB4 /* Assets.xcassets */,
+				B67CFF911F757A8800018FB4 /* Info.plist */,
+				B6576219209F5E11002883CF /* Localizable.strings */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B67CFF901F757A8800018FB4 /* LaunchScreen.storyboard in Resources */,
+				B657621A209F5E11002883CF /* Localizable.strings in Resources */,
 				B67CFF8D1F757A8800018FB4 /* Assets.xcassets in Resources */,
 				B67CFFB01F757B7F00018FB4 /* SearchViewController.storyboard in Resources */,
 			);

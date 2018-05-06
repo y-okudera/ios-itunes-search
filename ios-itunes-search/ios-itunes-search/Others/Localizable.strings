@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  ios-itunes-search
+
+  Created by OkuderaYuki on 2018/05/07.
+  Copyright © 2018年 YukiOkudera. All rights reserved.
+*/
+
+"OK" = "OK";
+"WARNING" = "警告";
+"UNKNOWN" = "不明";
+"SEARCH_MUSIC" = "音楽検索";
+
+"ITUNES_SEARCH_UNREACHABLE" = "通信環境の良い場所で再度お試しください。";
+"ITUNES_SEARCH_FAILED" = "検索に失敗しました。";
+"ITUNES_SEARCH_EMPTY" = "該当の音楽がみつかりません。";

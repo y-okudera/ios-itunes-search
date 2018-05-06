@@ -33,15 +33,23 @@ final class SearchViewController: UIViewController {
     }
     
     private func showAlert(message: String) {
-        let alert = UIAlertController(title: "エラー", message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default, handler:nil)
+        let alert = UIAlertController(
+            title: NSLocalizedString("WARNING", comment: ""),
+            message: message,
+            preferredStyle: .alert
+        )
+        let okAction = UIAlertAction(
+            title: NSLocalizedString("OK", comment: ""),
+            style: .default,
+            handler:nil
+        )
         alert.addAction(okAction)
         present(alert, animated: true, completion: nil)
     }
     
     private func clearList() {
         searchBar.text = ""
-        navigationItem.title = "音楽検索"
+        navigationItem.title = NSLocalizedString("SEARCH_MUSIC", comment: "")
         provider.set(tracks: [])
     }
 }
@@ -52,20 +60,20 @@ extension SearchViewController: ItunesSearchLoadable {
     func setResult(result: ItunesSearchAPIStatus) {
         switch result {
         case .loaded(tracks: let tracks):
-            navigationItem.title = tracks.results.first?.artistName ?? "不明"
+            navigationItem.title = tracks.results.first?.artistName ?? NSLocalizedString("UNKNOWN", comment: "")
             provider.set(tracks: tracks.results)
 
         case .offline:
             clearList()
-            showAlert(message: "通信環境の良い場所で再度お試しください。")
+            showAlert(message: NSLocalizedString("ITUNES_SEARCH_UNREACHABLE", comment: ""))
             
         case .emptyData:
             clearList()
-            showAlert(message: "該当の音楽がみつかりません。")
+            showAlert(message: NSLocalizedString("ITUNES_SEARCH_EMPTY", comment: ""))
             
         case .error:
             clearList()
-            showAlert(message: "検索に失敗しました。")
+            showAlert(message: NSLocalizedString("ITUNES_SEARCH_FAILED", comment: ""))
             
         }
         
