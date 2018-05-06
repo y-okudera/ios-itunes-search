@@ -27,6 +27,7 @@ final class SearchViewController: UIViewController {
 
     private func setup() {
         searchAPI.loadable = self
+        searchBar.enablesReturnKeyAutomatically = true
         tableView.tableFooterView = UIView()
         tableView.dataSource = provider
     }
