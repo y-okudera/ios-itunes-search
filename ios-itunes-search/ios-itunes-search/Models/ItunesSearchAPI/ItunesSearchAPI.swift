@@ -40,11 +40,9 @@ final class ItunesSearchAPI {
             
             switch result {
             case .success(let jsonData):
-                guard
-                    let jsonData = jsonData as? Data,
-                    let tracks = try? JSONDecoder().decode(Tracks.self, from: jsonData) else {
-                        self?.loadable?.setResult(result: .error)
-                        return
+                guard let tracks = try? JSONDecoder().decode(Tracks.self, from: jsonData) else {
+                    self?.loadable?.setResult(result: .error)
+                    return
                 }
                 if tracks.resultCount == 0 {
                     self?.loadable?.setResult(result: .emptyData)

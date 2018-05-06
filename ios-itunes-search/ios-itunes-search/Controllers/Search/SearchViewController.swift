@@ -6,8 +6,8 @@
 //  Copyright © 2017年 YukiOkudera. All rights reserved.
 //
 
-import UIKit
 import SVProgressHUD
+import UIKit
 
 final class SearchViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!

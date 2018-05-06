@@ -6,11 +6,11 @@
 //  Copyright © 2017年 YukiOkudera. All rights reserved.
 //
 
-import UIKit
 import Alamofire
+import UIKit
 
 enum Result {
-    case success(Any)
+    case success(Data)
     case failure(Error)
 }
 
@@ -32,7 +32,7 @@ final class APIClient {
     static func request(router: Router,
                         completionHandler: @escaping (Result) -> () = {_ in}) {
         
-        Alamofire.request(router).responseData() { (response) in
+        Alamofire.request(router).responseData() { response in
             
             let statusCode = response.response?.statusCode
             print("HTTP status code: \(String(describing: statusCode))")
