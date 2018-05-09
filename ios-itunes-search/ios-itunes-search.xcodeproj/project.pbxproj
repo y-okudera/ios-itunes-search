@@ -29,16 +29,10 @@
 		B633400320A3564800372507 /* Nuke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B633400220A3564800372507 /* Nuke.framework */; };
 		B638586B1F7745220004A562 /* UTRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = B638586A1F7745220004A562 /* UTRealm.swift */; };
 		B638586C1F7747260004A562 /* UTRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = B638586A1F7745220004A562 /* UTRealm.swift */; };
-		B63858711F774B4E0004A562 /* TrackIconImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63858701F774B4E0004A562 /* TrackIconImageTests.swift */; };
-		B63858731F774BC80004A562 /* TrackIconImageDaoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63858721F774BC80004A562 /* TrackIconImageDaoTests.swift */; };
 		B63858761F774DBD0004A562 /* TrackTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63858751F774DBD0004A562 /* TrackTableViewCellTests.swift */; };
 		B638587A1F7751280004A562 /* SearchViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63858791F7751280004A562 /* SearchViewControllerTests.swift */; };
-		B64758A11F7658E5005BD438 /* ItunesSearchParamsBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64758A01F7658E5005BD438 /* ItunesSearchParamsBuilderTests.swift */; };
 		B64758A41F765A60005BD438 /* DummyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64758A31F765A60005BD438 /* DummyResponse.swift */; };
-		B64758A71F765DFC005BD438 /* TracksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64758A61F765DFC005BD438 /* TracksTests.swift */; };
 		B64758A81F766497005BD438 /* search.json in Resources */ = {isa = PBXBuildFile; fileRef = B64758A51F765B67005BD438 /* search.json */; };
-		B64758AA1F7667D0005BD438 /* SpyItunesSearchLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64758A91F7667D0005BD438 /* SpyItunesSearchLoadable.swift */; };
-		B64758AC1F767256005BD438 /* ItunesSearchAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64758AB1F767256005BD438 /* ItunesSearchAPITests.swift */; };
 		B6576217209F57C9002883CF /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6F5CE40209F4FEF0077C9DC /* Realm.framework */; };
 		B6576218209F57C9002883CF /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6F5CE42209F4FEF0077C9DC /* RealmSwift.framework */; };
 		B657621A209F5E11002883CF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B6576219209F5E11002883CF /* Localizable.strings */; };
@@ -89,16 +83,10 @@
 		B633400020A232DF00372507 /* TrackIconPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackIconPresenter.swift; sourceTree = "<group>"; };
 		B633400220A3564800372507 /* Nuke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nuke.framework; path = Carthage/Build/iOS/Nuke.framework; sourceTree = "<group>"; };
 		B638586A1F7745220004A562 /* UTRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UTRealm.swift; sourceTree = "<group>"; };
-		B63858701F774B4E0004A562 /* TrackIconImageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackIconImageTests.swift; sourceTree = "<group>"; };
-		B63858721F774BC80004A562 /* TrackIconImageDaoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackIconImageDaoTests.swift; sourceTree = "<group>"; };
 		B63858751F774DBD0004A562 /* TrackTableViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTableViewCellTests.swift; sourceTree = "<group>"; };
 		B63858791F7751280004A562 /* SearchViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControllerTests.swift; sourceTree = "<group>"; };
-		B64758A01F7658E5005BD438 /* ItunesSearchParamsBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItunesSearchParamsBuilderTests.swift; sourceTree = "<group>"; };
 		B64758A31F765A60005BD438 /* DummyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyResponse.swift; sourceTree = "<group>"; };
 		B64758A51F765B67005BD438 /* search.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = search.json; sourceTree = "<group>"; };
-		B64758A61F765DFC005BD438 /* TracksTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracksTests.swift; sourceTree = "<group>"; };
-		B64758A91F7667D0005BD438 /* SpyItunesSearchLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyItunesSearchLoadable.swift; sourceTree = "<group>"; };
-		B64758AB1F767256005BD438 /* ItunesSearchAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItunesSearchAPITests.swift; sourceTree = "<group>"; };
 		B6576219209F5E11002883CF /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		B678DBE81F7586220013A2E7 /* RealmDaoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDaoHelper.swift; sourceTree = "<group>"; };
 		B678DBF91F75F53D0013A2E7 /* TrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTableViewCell.swift; sourceTree = "<group>"; };
@@ -345,56 +333,37 @@
 			path = TrackIcon;
 			sourceTree = "<group>";
 		};
-		B638586E1F774B070004A562 /* Models */ = {
+		B633400420A35EA200372507 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				B638586F1F774B280004A562 /* DB */,
-				B647589F1F7658CB005BD438 /* ItunesSearchAPI */,
+				B633400520A35EAA00372507 /* UI */,
 			);
-			path = Models;
+			path = Presentation;
 			sourceTree = "<group>";
 		};
-		B638586F1F774B280004A562 /* DB */ = {
+		B633400520A35EAA00372507 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				B63858701F774B4E0004A562 /* TrackIconImageTests.swift */,
-				B63858721F774BC80004A562 /* TrackIconImageDaoTests.swift */,
+				B633400620A35EB200372507 /* ViewController */,
+				B633400720A35EB700372507 /* View */,
 			);
-			path = DB;
+			path = UI;
 			sourceTree = "<group>";
 		};
-		B63858741F774D9C0004A562 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				B63858751F774DBD0004A562 /* TrackTableViewCellTests.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		B63858771F7751040004A562 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				B63858781F7751190004A562 /* Search */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		B63858781F7751190004A562 /* Search */ = {
+		B633400620A35EB200372507 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				B63858791F7751280004A562 /* SearchViewControllerTests.swift */,
 			);
-			path = Search;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
-		B647589F1F7658CB005BD438 /* ItunesSearchAPI */ = {
+		B633400720A35EB700372507 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B64758A01F7658E5005BD438 /* ItunesSearchParamsBuilderTests.swift */,
-				B64758A61F765DFC005BD438 /* TracksTests.swift */,
-				B64758AB1F767256005BD438 /* ItunesSearchAPITests.swift */,
+				B63858751F774DBD0004A562 /* TrackTableViewCellTests.swift */,
 			);
-			path = ItunesSearchAPI;
+			path = View;
 			sourceTree = "<group>";
 		};
 		B64758A21F765A4F005BD438 /* Common */ = {
@@ -402,7 +371,6 @@
 			children = (
 				B64758A51F765B67005BD438 /* search.json */,
 				B64758A31F765A60005BD438 /* DummyResponse.swift */,
-				B64758A91F7667D0005BD438 /* SpyItunesSearchLoadable.swift */,
 				B638586A1F7745220004A562 /* UTRealm.swift */,
 			);
 			path = Common;
@@ -443,11 +411,9 @@
 		B67CFF991F757A8900018FB4 /* ios-itunes-searchTests */ = {
 			isa = PBXGroup;
 			children = (
-				B64758A21F765A4F005BD438 /* Common */,
-				B63858771F7751040004A562 /* Controllers */,
-				B638586E1F774B070004A562 /* Models */,
-				B63858741F774D9C0004A562 /* Views */,
 				B67CFF9C1F757A8900018FB4 /* Info.plist */,
+				B64758A21F765A4F005BD438 /* Common */,
+				B633400420A35EA200372507 /* Presentation */,
 			);
 			path = "ios-itunes-searchTests";
 			sourceTree = "<group>";
@@ -625,16 +591,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B63858711F774B4E0004A562 /* TrackIconImageTests.swift in Sources */,
-				B64758AA1F7667D0005BD438 /* SpyItunesSearchLoadable.swift in Sources */,
 				B638586B1F7745220004A562 /* UTRealm.swift in Sources */,
-				B64758AC1F767256005BD438 /* ItunesSearchAPITests.swift in Sources */,
-				B64758A11F7658E5005BD438 /* ItunesSearchParamsBuilderTests.swift in Sources */,
 				B63858761F774DBD0004A562 /* TrackTableViewCellTests.swift in Sources */,
 				B638587A1F7751280004A562 /* SearchViewControllerTests.swift in Sources */,
 				B64758A41F765A60005BD438 /* DummyResponse.swift in Sources */,
-				B64758A71F765DFC005BD438 /* TracksTests.swift in Sources */,
-				B63858731F774BC80004A562 /* TrackIconImageDaoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

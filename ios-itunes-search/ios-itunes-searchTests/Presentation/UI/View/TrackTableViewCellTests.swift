@@ -39,7 +39,7 @@ final class TrackTableViewCellTests: XCTestCase {
         
         let dummy = DummyResponse().searchApiJSONString()
         let dummyData = dummy.data(using: .utf8)!
-        let tracks = try! JSONDecoder().decode(Tracks.self, from: dummyData)
+        let tracks = try! JSONDecoder().decode(TrackListEntity.self, from: dummyData)
 
         cell.item = tracks.results.first
         
