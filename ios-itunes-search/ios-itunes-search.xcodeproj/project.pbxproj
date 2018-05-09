@@ -7,6 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B6333FD420A0BB3500372507 /* TrackDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6333FD320A0BB3500372507 /* TrackDataStore.swift */; };
+		B6333FD620A0BEBD00372507 /* SwiftTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6333FD520A0BEBD00372507 /* SwiftTask.framework */; };
+		B6333FD820A0BF9E00372507 /* TrackEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6333FD720A0BF9E00372507 /* TrackEntity.swift */; };
+		B6333FDB20A0C19200372507 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6333FDA20A0C19200372507 /* APIClient.swift */; };
+		B6333FDD20A0C1AC00372507 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6333FDC20A0C1AC00372507 /* Request.swift */; };
+		B6333FDF20A0C1C700372507 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6333FDE20A0C1C700372507 /* Logger.swift */; };
+		B6333FE320A0C6B000372507 /* Error+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6333FE220A0C6B000372507 /* Error+Helper.swift */; };
+		B6333FE520A0C7B600372507 /* ITunesSearchErrorEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6333FE420A0C7B600372507 /* ITunesSearchErrorEntity.swift */; };
+		B6333FE720A0C86E00372507 /* TrackRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6333FE620A0C86E00372507 /* TrackRepository.swift */; };
+		B6333FE920A0CF2300372507 /* TrackUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6333FE820A0CF2300372507 /* TrackUseCase.swift */; };
+		B6333FEB20A0D2F000372507 /* TrackPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6333FEA20A0D2F000372507 /* TrackPresenter.swift */; };
+		B6333FED20A20B3800372507 /* CellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6333FEC20A20B3800372507 /* CellType.swift */; };
+		B6333FF120A2117E00372507 /* UIViViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6333FF020A2117E00372507 /* UIViViewController+Alert.swift */; };
+		B6333FF620A2178900372507 /* TrackIconEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6333FF520A2178900372507 /* TrackIconEntity.swift */; };
+		B6333FF920A217EC00372507 /* TrackIconDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6333FF820A217EC00372507 /* TrackIconDataStore.swift */; };
+		B6333FFB20A2267600372507 /* TrackIconFetchError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6333FFA20A2267600372507 /* TrackIconFetchError.swift */; };
+		B6333FFD20A2318F00372507 /* TrackIconRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6333FFC20A2318F00372507 /* TrackIconRepository.swift */; };
+		B6333FFF20A2320A00372507 /* TrackIconUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6333FFE20A2320A00372507 /* TrackIconUseCase.swift */; };
+		B633400120A232DF00372507 /* TrackIconPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B633400020A232DF00372507 /* TrackIconPresenter.swift */; };
 		B638586B1F7745220004A562 /* UTRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = B638586A1F7745220004A562 /* UTRealm.swift */; };
 		B638586C1F7747260004A562 /* UTRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = B638586A1F7745220004A562 /* UTRealm.swift */; };
 		B63858711F774B4E0004A562 /* TrackIconImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63858701F774B4E0004A562 /* TrackIconImageTests.swift */; };
@@ -22,19 +41,10 @@
 		B6576217209F57C9002883CF /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6F5CE40209F4FEF0077C9DC /* Realm.framework */; };
 		B6576218209F57C9002883CF /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6F5CE42209F4FEF0077C9DC /* RealmSwift.framework */; };
 		B657621A209F5E11002883CF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B6576219209F5E11002883CF /* Localizable.strings */; };
-		B678DBED1F758AAB0013A2E7 /* ItunesSearchParamsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678DBEC1F758AAB0013A2E7 /* ItunesSearchParamsBuilder.swift */; };
-		B678DBEF1F758B690013A2E7 /* ItunesSearchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678DBEE1F758B690013A2E7 /* ItunesSearchAPI.swift */; };
-		B678DBF11F758BE90013A2E7 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678DBF01F758BE90013A2E7 /* Track.swift */; };
-		B678DBF31F75EF060013A2E7 /* Tracks.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678DBF21F75EF060013A2E7 /* Tracks.swift */; };
-		B678DBF41F75F0250013A2E7 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678DBE91F7587E30013A2E7 /* APIClient.swift */; };
 		B678DBF61F75F02C0013A2E7 /* RealmDaoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678DBE81F7586220013A2E7 /* RealmDaoHelper.swift */; };
-		B678DBF71F75F02F0013A2E7 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678DBEB1F7587E40013A2E7 /* Router.swift */; };
 		B678DBF81F75F03E0013A2E7 /* SVProgressHUD+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67CFFB21F757D4400018FB4 /* SVProgressHUD+Custom.swift */; };
 		B678DBFA1F75F53D0013A2E7 /* TrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678DBF91F75F53D0013A2E7 /* TrackTableViewCell.swift */; };
-		B678DBFE1F75F8270013A2E7 /* TrackIconImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678DBFD1F75F8270013A2E7 /* TrackIconImage.swift */; };
-		B678DC001F75F86F0013A2E7 /* TrackIconImageDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678DBFF1F75F86F0013A2E7 /* TrackIconImageDao.swift */; };
 		B678DC041F75FA820013A2E7 /* EmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678DC031F75FA820013A2E7 /* EmptyTableViewCell.swift */; };
-		B678DC061F75FBA40013A2E7 /* TracksProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678DC051F75FBA40013A2E7 /* TracksProvider.swift */; };
 		B67CFF861F757A8800018FB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67CFF851F757A8800018FB4 /* AppDelegate.swift */; };
 		B67CFF8D1F757A8800018FB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B67CFF8C1F757A8800018FB4 /* Assets.xcassets */; };
 		B67CFF901F757A8800018FB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B67CFF8E1F757A8800018FB4 /* LaunchScreen.storyboard */; };
@@ -57,6 +67,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B6333FD320A0BB3500372507 /* TrackDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDataStore.swift; sourceTree = "<group>"; };
+		B6333FD520A0BEBD00372507 /* SwiftTask.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftTask.framework; path = Carthage/Build/iOS/SwiftTask.framework; sourceTree = "<group>"; };
+		B6333FD720A0BF9E00372507 /* TrackEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackEntity.swift; sourceTree = "<group>"; };
+		B6333FDA20A0C19200372507 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		B6333FDC20A0C1AC00372507 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		B6333FDE20A0C1C700372507 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		B6333FE220A0C6B000372507 /* Error+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+Helper.swift"; sourceTree = "<group>"; };
+		B6333FE420A0C7B600372507 /* ITunesSearchErrorEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesSearchErrorEntity.swift; sourceTree = "<group>"; };
+		B6333FE620A0C86E00372507 /* TrackRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackRepository.swift; sourceTree = "<group>"; };
+		B6333FE820A0CF2300372507 /* TrackUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackUseCase.swift; sourceTree = "<group>"; };
+		B6333FEA20A0D2F000372507 /* TrackPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackPresenter.swift; sourceTree = "<group>"; };
+		B6333FEC20A20B3800372507 /* CellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellType.swift; sourceTree = "<group>"; };
+		B6333FF020A2117E00372507 /* UIViViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViViewController+Alert.swift"; sourceTree = "<group>"; };
+		B6333FF520A2178900372507 /* TrackIconEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackIconEntity.swift; sourceTree = "<group>"; };
+		B6333FF820A217EC00372507 /* TrackIconDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackIconDataStore.swift; sourceTree = "<group>"; };
+		B6333FFA20A2267600372507 /* TrackIconFetchError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackIconFetchError.swift; sourceTree = "<group>"; };
+		B6333FFC20A2318F00372507 /* TrackIconRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackIconRepository.swift; sourceTree = "<group>"; };
+		B6333FFE20A2320A00372507 /* TrackIconUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackIconUseCase.swift; sourceTree = "<group>"; };
+		B633400020A232DF00372507 /* TrackIconPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackIconPresenter.swift; sourceTree = "<group>"; };
 		B638586A1F7745220004A562 /* UTRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UTRealm.swift; sourceTree = "<group>"; };
 		B63858701F774B4E0004A562 /* TrackIconImageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackIconImageTests.swift; sourceTree = "<group>"; };
 		B63858721F774BC80004A562 /* TrackIconImageDaoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackIconImageDaoTests.swift; sourceTree = "<group>"; };
@@ -70,17 +99,8 @@
 		B64758AB1F767256005BD438 /* ItunesSearchAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItunesSearchAPITests.swift; sourceTree = "<group>"; };
 		B6576219209F5E11002883CF /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		B678DBE81F7586220013A2E7 /* RealmDaoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDaoHelper.swift; sourceTree = "<group>"; };
-		B678DBE91F7587E30013A2E7 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
-		B678DBEB1F7587E40013A2E7 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		B678DBEC1F758AAB0013A2E7 /* ItunesSearchParamsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItunesSearchParamsBuilder.swift; sourceTree = "<group>"; };
-		B678DBEE1F758B690013A2E7 /* ItunesSearchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItunesSearchAPI.swift; sourceTree = "<group>"; };
-		B678DBF01F758BE90013A2E7 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
-		B678DBF21F75EF060013A2E7 /* Tracks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tracks.swift; sourceTree = "<group>"; };
 		B678DBF91F75F53D0013A2E7 /* TrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTableViewCell.swift; sourceTree = "<group>"; };
-		B678DBFD1F75F8270013A2E7 /* TrackIconImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackIconImage.swift; sourceTree = "<group>"; };
-		B678DBFF1F75F86F0013A2E7 /* TrackIconImageDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackIconImageDao.swift; sourceTree = "<group>"; };
 		B678DC031F75FA820013A2E7 /* EmptyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTableViewCell.swift; sourceTree = "<group>"; };
-		B678DC051F75FBA40013A2E7 /* TracksProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracksProvider.swift; sourceTree = "<group>"; };
 		B67CFF821F757A8800018FB4 /* ios-itunes-search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-itunes-search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B67CFF851F757A8800018FB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B67CFF8C1F757A8800018FB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -102,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6333FD620A0BEBD00372507 /* SwiftTask.framework in Frameworks */,
 				B6F5CE44209F4FEF0077C9DC /* Realm.framework in Frameworks */,
 				B6F5CE45209F4FEF0077C9DC /* SVProgressHUD.framework in Frameworks */,
 				B6F5CE46209F4FEF0077C9DC /* RealmSwift.framework in Frameworks */,
@@ -124,12 +145,200 @@
 		08A7F1A06E77A0D5175E1EF8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B6333FD520A0BEBD00372507 /* SwiftTask.framework */,
 				B6F5CE43209F4FEF0077C9DC /* Alamofire.framework */,
 				B6F5CE40209F4FEF0077C9DC /* Realm.framework */,
 				B6F5CE42209F4FEF0077C9DC /* RealmSwift.framework */,
 				B6F5CE41209F4FEF0077C9DC /* SVProgressHUD.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B6333FC620A0B94400372507 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				B6333FC720A0B94F00372507 /* Presenter */,
+				B6333FC820A0B95600372507 /* UI */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		B6333FC720A0B94F00372507 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B6333FEA20A0D2F000372507 /* TrackPresenter.swift */,
+				B633400020A232DF00372507 /* TrackIconPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B6333FC820A0B95600372507 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				B6333FCA20A0B97600372507 /* ViewController */,
+				B6333FC920A0B97100372507 /* View */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		B6333FC920A0B97100372507 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B6333FEC20A20B3800372507 /* CellType.swift */,
+				B678DC031F75FA820013A2E7 /* EmptyTableViewCell.swift */,
+				B678DBF91F75F53D0013A2E7 /* TrackTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B6333FCA20A0B97600372507 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B67CFFAD1F757B7500018FB4 /* SearchViewController.swift */,
+				B67CFFAF1F757B7F00018FB4 /* SearchViewController.storyboard */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		B6333FCB20A0B99500372507 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				B6333FCF20A0BA1000372507 /* Repository */,
+				B6333FCD20A0B9F300372507 /* UseCase */,
+				B6333FCC20A0B9ED00372507 /* Model */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		B6333FCC20A0B9ED00372507 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B6333FCD20A0B9F300372507 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				B6333FE820A0CF2300372507 /* TrackUseCase.swift */,
+				B6333FFE20A2320A00372507 /* TrackIconUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		B6333FCF20A0BA1000372507 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				B6333FE620A0C86E00372507 /* TrackRepository.swift */,
+				B6333FFC20A2318F00372507 /* TrackIconRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		B6333FD020A0BA5B00372507 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				B6333FD220A0BA6D00372507 /* DataStore */,
+				B6333FD120A0BA6700372507 /* Entity */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		B6333FD120A0BA6700372507 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				B6333FF220A2172C00372507 /* Track */,
+				B6333FF420A2177700372507 /* TrackIcon */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		B6333FD220A0BA6D00372507 /* DataStore */ = {
+			isa = PBXGroup;
+			children = (
+				B6333FF320A2173700372507 /* Track */,
+				B6333FF720A217D500372507 /* TrackIcon */,
+			);
+			path = DataStore;
+			sourceTree = "<group>";
+		};
+		B6333FD920A0C16600372507 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				B6333FDA20A0C19200372507 /* APIClient.swift */,
+				B678DBE81F7586220013A2E7 /* RealmDaoHelper.swift */,
+				B6333FDC20A0C1AC00372507 /* Request.swift */,
+				B6333FDE20A0C1C700372507 /* Logger.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		B6333FE020A0C68000372507 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B6333FE120A0C68B00372507 /* Foundation */,
+				B6333FEE20A2112E00372507 /* OSS */,
+				B6333FEF20A2114200372507 /* UIKit */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		B6333FE120A0C68B00372507 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				B6333FE220A0C6B000372507 /* Error+Helper.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		B6333FEE20A2112E00372507 /* OSS */ = {
+			isa = PBXGroup;
+			children = (
+				B67CFFB21F757D4400018FB4 /* SVProgressHUD+Custom.swift */,
+			);
+			path = OSS;
+			sourceTree = "<group>";
+		};
+		B6333FEF20A2114200372507 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				B6333FF020A2117E00372507 /* UIViViewController+Alert.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		B6333FF220A2172C00372507 /* Track */ = {
+			isa = PBXGroup;
+			children = (
+				B6333FD720A0BF9E00372507 /* TrackEntity.swift */,
+				B6333FE420A0C7B600372507 /* ITunesSearchErrorEntity.swift */,
+			);
+			path = Track;
+			sourceTree = "<group>";
+		};
+		B6333FF320A2173700372507 /* Track */ = {
+			isa = PBXGroup;
+			children = (
+				B6333FD320A0BB3500372507 /* TrackDataStore.swift */,
+			);
+			path = Track;
+			sourceTree = "<group>";
+		};
+		B6333FF420A2177700372507 /* TrackIcon */ = {
+			isa = PBXGroup;
+			children = (
+				B6333FF520A2178900372507 /* TrackIconEntity.swift */,
+				B6333FFA20A2267600372507 /* TrackIconFetchError.swift */,
+			);
+			path = TrackIcon;
+			sourceTree = "<group>";
+		};
+		B6333FF720A217D500372507 /* TrackIcon */ = {
+			isa = PBXGroup;
+			children = (
+				B6333FF820A217EC00372507 /* TrackIconDataStore.swift */,
+			);
+			path = TrackIcon;
 			sourceTree = "<group>";
 		};
 		B638586E1F774B070004A562 /* Models */ = {
@@ -195,26 +404,6 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
-		B678DBFB1F75F7F90013A2E7 /* ItunesSearchAPI */ = {
-			isa = PBXGroup;
-			children = (
-				B678DBEE1F758B690013A2E7 /* ItunesSearchAPI.swift */,
-				B678DBEC1F758AAB0013A2E7 /* ItunesSearchParamsBuilder.swift */,
-				B678DBF01F758BE90013A2E7 /* Track.swift */,
-				B678DBF21F75EF060013A2E7 /* Tracks.swift */,
-			);
-			path = ItunesSearchAPI;
-			sourceTree = "<group>";
-		};
-		B678DBFC1F75F8010013A2E7 /* DB */ = {
-			isa = PBXGroup;
-			children = (
-				B678DBFD1F75F8270013A2E7 /* TrackIconImage.swift */,
-				B678DBFF1F75F86F0013A2E7 /* TrackIconImageDao.swift */,
-			);
-			path = DB;
-			sourceTree = "<group>";
-		};
 		B67CFF791F757A8800018FB4 = {
 			isa = PBXGroup;
 			children = (
@@ -237,12 +426,12 @@
 		B67CFF841F757A8800018FB4 /* ios-itunes-search */ = {
 			isa = PBXGroup;
 			children = (
+				B6333FE020A0C68000372507 /* Extension */,
+				B6333FD920A0C16600372507 /* Utility */,
+				B6333FD020A0BA5B00372507 /* Data */,
+				B6333FCB20A0B99500372507 /* Domain */,
+				B6333FC620A0B94400372507 /* Presentation */,
 				B67CFFAA1F757B2700018FB4 /* Others */,
-				B67CFFA91F757B2300018FB4 /* Helpers */,
-				B67CFFA81F757B1700018FB4 /* Extensions */,
-				B67CFFA71F757AAB00018FB4 /* Controllers */,
-				B67CFFA61F757AA600018FB4 /* Views */,
-				B67CFFA51F757A9E00018FB4 /* Models */,
 			);
 			path = "ios-itunes-search";
 			sourceTree = "<group>";
@@ -259,78 +448,16 @@
 			path = "ios-itunes-searchTests";
 			sourceTree = "<group>";
 		};
-		B67CFFA51F757A9E00018FB4 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				B678DBFC1F75F8010013A2E7 /* DB */,
-				B678DBFB1F75F7F90013A2E7 /* ItunesSearchAPI */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		B67CFFA61F757AA600018FB4 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				B678DC031F75FA820013A2E7 /* EmptyTableViewCell.swift */,
-				B678DC051F75FBA40013A2E7 /* TracksProvider.swift */,
-				B678DBF91F75F53D0013A2E7 /* TrackTableViewCell.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		B67CFFA71F757AAB00018FB4 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				B67CFFAC1F757B5A00018FB4 /* Search */,
-				B67CFFAB1F757B5100018FB4 /* Startup */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		B67CFFA81F757B1700018FB4 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				B67CFFB21F757D4400018FB4 /* SVProgressHUD+Custom.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		B67CFFA91F757B2300018FB4 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				B678DBE91F7587E30013A2E7 /* APIClient.swift */,
-				B678DBE81F7586220013A2E7 /* RealmDaoHelper.swift */,
-				B678DBEB1F7587E40013A2E7 /* Router.swift */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
 		B67CFFAA1F757B2700018FB4 /* Others */ = {
 			isa = PBXGroup;
 			children = (
 				B67CFF851F757A8800018FB4 /* AppDelegate.swift */,
 				B67CFF8C1F757A8800018FB4 /* Assets.xcassets */,
 				B67CFF911F757A8800018FB4 /* Info.plist */,
+				B67CFF8E1F757A8800018FB4 /* LaunchScreen.storyboard */,
 				B6576219209F5E11002883CF /* Localizable.strings */,
 			);
 			path = Others;
-			sourceTree = "<group>";
-		};
-		B67CFFAB1F757B5100018FB4 /* Startup */ = {
-			isa = PBXGroup;
-			children = (
-				B67CFF8E1F757A8800018FB4 /* LaunchScreen.storyboard */,
-			);
-			path = Startup;
-			sourceTree = "<group>";
-		};
-		B67CFFAC1F757B5A00018FB4 /* Search */ = {
-			isa = PBXGroup;
-			children = (
-				B67CFFAD1F757B7500018FB4 /* SearchViewController.swift */,
-				B67CFFAF1F757B7F00018FB4 /* SearchViewController.storyboard */,
-			);
-			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -445,6 +572,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SVProgressHUD.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftTask.framework",
 			);
 			name = Carthage;
 			outputPaths = (
@@ -461,21 +589,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				B67CFFAE1F757B7500018FB4 /* SearchViewController.swift in Sources */,
-				B678DBF41F75F0250013A2E7 /* APIClient.swift in Sources */,
 				B638586C1F7747260004A562 /* UTRealm.swift in Sources */,
-				B678DC061F75FBA40013A2E7 /* TracksProvider.swift in Sources */,
-				B678DBF71F75F02F0013A2E7 /* Router.swift in Sources */,
-				B678DC001F75F86F0013A2E7 /* TrackIconImageDao.swift in Sources */,
-				B678DBF11F758BE90013A2E7 /* Track.swift in Sources */,
+				B6333FDB20A0C19200372507 /* APIClient.swift in Sources */,
+				B6333FD820A0BF9E00372507 /* TrackEntity.swift in Sources */,
+				B6333FF920A217EC00372507 /* TrackIconDataStore.swift in Sources */,
+				B6333FE520A0C7B600372507 /* ITunesSearchErrorEntity.swift in Sources */,
+				B6333FEB20A0D2F000372507 /* TrackPresenter.swift in Sources */,
+				B6333FE720A0C86E00372507 /* TrackRepository.swift in Sources */,
+				B6333FDD20A0C1AC00372507 /* Request.swift in Sources */,
 				B67CFF861F757A8800018FB4 /* AppDelegate.swift in Sources */,
-				B678DBF31F75EF060013A2E7 /* Tracks.swift in Sources */,
 				B678DBF61F75F02C0013A2E7 /* RealmDaoHelper.swift in Sources */,
 				B678DC041F75FA820013A2E7 /* EmptyTableViewCell.swift in Sources */,
 				B678DBFA1F75F53D0013A2E7 /* TrackTableViewCell.swift in Sources */,
+				B6333FF620A2178900372507 /* TrackIconEntity.swift in Sources */,
 				B678DBF81F75F03E0013A2E7 /* SVProgressHUD+Custom.swift in Sources */,
-				B678DBEF1F758B690013A2E7 /* ItunesSearchAPI.swift in Sources */,
-				B678DBFE1F75F8270013A2E7 /* TrackIconImage.swift in Sources */,
-				B678DBED1F758AAB0013A2E7 /* ItunesSearchParamsBuilder.swift in Sources */,
+				B6333FE920A0CF2300372507 /* TrackUseCase.swift in Sources */,
+				B6333FFF20A2320A00372507 /* TrackIconUseCase.swift in Sources */,
+				B6333FF120A2117E00372507 /* UIViViewController+Alert.swift in Sources */,
+				B6333FDF20A0C1C700372507 /* Logger.swift in Sources */,
+				B6333FFB20A2267600372507 /* TrackIconFetchError.swift in Sources */,
+				B6333FD420A0BB3500372507 /* TrackDataStore.swift in Sources */,
+				B6333FED20A20B3800372507 /* CellType.swift in Sources */,
+				B6333FFD20A2318F00372507 /* TrackIconRepository.swift in Sources */,
+				B6333FE320A0C6B000372507 /* Error+Helper.swift in Sources */,
+				B633400120A232DF00372507 /* TrackIconPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
