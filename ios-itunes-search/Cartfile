@@ -2,3 +2,4 @@ github "Alamofire/Alamofire" ~> 4.7
 github "SVProgressHUD/SVProgressHUD" ~> 2.2
 github "realm/realm-cocoa" ~> 3.5
 github "ReactKit/SwiftTask" "swift/4.0"
+github "kean/Nuke" ~> 7.0

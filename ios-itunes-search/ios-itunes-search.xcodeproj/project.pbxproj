@@ -26,6 +26,7 @@
 		B6333FFD20A2318F00372507 /* TrackIconRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6333FFC20A2318F00372507 /* TrackIconRepository.swift */; };
 		B6333FFF20A2320A00372507 /* TrackIconUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6333FFE20A2320A00372507 /* TrackIconUseCase.swift */; };
 		B633400120A232DF00372507 /* TrackIconPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B633400020A232DF00372507 /* TrackIconPresenter.swift */; };
+		B633400320A3564800372507 /* Nuke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B633400220A3564800372507 /* Nuke.framework */; };
 		B638586B1F7745220004A562 /* UTRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = B638586A1F7745220004A562 /* UTRealm.swift */; };
 		B638586C1F7747260004A562 /* UTRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = B638586A1F7745220004A562 /* UTRealm.swift */; };
 		B63858711F774B4E0004A562 /* TrackIconImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63858701F774B4E0004A562 /* TrackIconImageTests.swift */; };
@@ -86,6 +87,7 @@
 		B6333FFC20A2318F00372507 /* TrackIconRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackIconRepository.swift; sourceTree = "<group>"; };
 		B6333FFE20A2320A00372507 /* TrackIconUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackIconUseCase.swift; sourceTree = "<group>"; };
 		B633400020A232DF00372507 /* TrackIconPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackIconPresenter.swift; sourceTree = "<group>"; };
+		B633400220A3564800372507 /* Nuke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nuke.framework; path = Carthage/Build/iOS/Nuke.framework; sourceTree = "<group>"; };
 		B638586A1F7745220004A562 /* UTRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UTRealm.swift; sourceTree = "<group>"; };
 		B63858701F774B4E0004A562 /* TrackIconImageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackIconImageTests.swift; sourceTree = "<group>"; };
 		B63858721F774BC80004A562 /* TrackIconImageDaoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackIconImageDaoTests.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B633400320A3564800372507 /* Nuke.framework in Frameworks */,
 				B6333FD620A0BEBD00372507 /* SwiftTask.framework in Frameworks */,
 				B6F5CE44209F4FEF0077C9DC /* Realm.framework in Frameworks */,
 				B6F5CE45209F4FEF0077C9DC /* SVProgressHUD.framework in Frameworks */,
@@ -145,6 +148,7 @@
 		08A7F1A06E77A0D5175E1EF8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B633400220A3564800372507 /* Nuke.framework */,
 				B6333FD520A0BEBD00372507 /* SwiftTask.framework */,
 				B6F5CE43209F4FEF0077C9DC /* Alamofire.framework */,
 				B6F5CE40209F4FEF0077C9DC /* Realm.framework */,
@@ -573,6 +577,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/SVProgressHUD.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftTask.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Nuke.framework",
 			);
 			name = Carthage;
 			outputPaths = (
