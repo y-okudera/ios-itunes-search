@@ -6,6 +6,8 @@
 //  Copyright © 2018年 YukiOkudera. All rights reserved.
 //
 
+import Alamofire
+import Nuke
 import SwiftTask
 import UIKit
 
@@ -16,7 +18,7 @@ protocol TrackIconDataStore {
 
 // MARK: - Implementation
 final class TrackIconDataStoreImpl: TrackIconDataStore {
-
+    
     func fetchTrackIcon(track: TrackEntity) -> Task<Float, TrackIconEntity, TrackIconFetchError> {
 
         let task = Task<Float, TrackIconEntity, TrackIconFetchError> { progress, fulfill, reject, configure in
@@ -29,15 +31,10 @@ final class TrackIconDataStoreImpl: TrackIconDataStore {
             }
 
             guard let imageUrl = URL(string: track.artworkUrl100) else { return }
-            let urlRequest = URLRequest(url: imageUrl)
-            let urlSessionConfig = URLSessionConfiguration.default
-            urlSessionConfig.timeoutIntervalForRequest = 30.0
-            urlSessionConfig.timeoutIntervalForResource = 60.0
 
-            let urlSession = URLSession(configuration: urlSessionConfig)
-            urlSession.dataTask(with: urlRequest) { [weak self] data, _, error in
-                
-                if let error = error {
+            Alamofire.SessionManager.default.request(imageUrl).response(completionHandler: { response in
+
+                if let error = response.error {
                     Logger.error(message: "Failed to download icon.\n->\(error.localizedDescription)")
                     if error.isOffline || error.isTimeout {
                         reject(TrackIconFetchError(kind: .unreachable))
@@ -47,10 +44,11 @@ final class TrackIconDataStoreImpl: TrackIconDataStore {
                     return
                 }
 
-                guard let data = data else {
+                guard let data = response.data else {
                     reject(TrackIconFetchError(kind: .downloadFailed))
                     return
                 }
+
                 DispatchQueue.main.async { [weak self] in
                     let downloadedIcon = TrackIconEntity()
                     downloadedIcon.trackId = track.trackId
@@ -58,7 +56,7 @@ final class TrackIconDataStoreImpl: TrackIconDataStore {
                     self?.add(entity: downloadedIcon)
                     fulfill(TrackIconEntity(value: downloadedIcon))
                 }
-                }.resume()
+            })
         }
         return task
     }
