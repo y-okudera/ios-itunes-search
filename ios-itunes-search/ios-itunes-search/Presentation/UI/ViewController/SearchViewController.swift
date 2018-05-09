@@ -76,15 +76,7 @@ extension SearchViewController: TrackViewInput {
             }
         case .normal:
             SVProgressHUD.dismiss()
-        case .empty(let message):
-            clearList()
-            SVProgressHUD.dismiss()
-            showAlert(warningMessage: message)
-        case .searchFailed(let message):
-            clearList()
-            SVProgressHUD.dismiss()
-            showAlert(warningMessage: message)
-        case .unreachable(let message):
+        case .empty(let message), .searchFailed(let message), .unreachable(let message):
             clearList()
             SVProgressHUD.dismiss()
             showAlert(warningMessage: message)
@@ -121,7 +113,7 @@ extension SearchViewController: UITableViewDelegate {
     }
 }
 
-// MARK : - UITableViewDataSource
+// MARK: - UITableViewDataSource
 extension SearchViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
