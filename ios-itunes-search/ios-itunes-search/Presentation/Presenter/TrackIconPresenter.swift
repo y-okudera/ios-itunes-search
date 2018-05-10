@@ -24,18 +24,14 @@ final class TrackIconPresenterImpl: TrackIconPresenter {
     }
     
     func fetchTrackIcon(track: TrackEntity) {
-
+        
         useCase.fetchTrackIcon(track: track)
             .success { trackIconModel in
-                Logger.debug(message: "fetchTrackIcon: success")
                 self.loadedTrackIcon(trackIconModel: trackIconModel)
-
+                
             }.failure { error in
                 Logger.debug(message: "fetchTrackIcon: failure")
                 Logger.error(message: "error: \(error)")
-
-            }.then { _, _ in
-                Logger.debug(message: "fetchTrackIcon: done")
         }
     }
 

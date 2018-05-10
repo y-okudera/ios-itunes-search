@@ -41,13 +41,12 @@ final class TrackPresenterImpl: TrackPresenter {
 
         useCase.searchTracks(term: term)
             .success { tracks in
-                Logger.debug(message: "searchTracks: success")
                 self.loadedTracks(tracks: tracks)
-
+                
             }.failure { error in
                 Logger.debug(message: "searchTracks: failure")
                 Logger.error(message: "error: \(error)")
-
+                
                 if let iTunesSearchError = error.error {
                     Logger.error(message: "error message: \(iTunesSearchError.message)")
                     self.errorHandling(error: iTunesSearchError)
@@ -55,9 +54,6 @@ final class TrackPresenterImpl: TrackPresenter {
                     let searchFailedMessage = NSLocalizedString("ITUNES_SEARCH_FAILED", comment: "")
                     self.viewInput?.changedStatus(status: .searchFailed(message: searchFailedMessage))
                 }
-
-            }.then { _, _ in
-                Logger.debug(message: "searchTracks: done")
         }
     }
 

@@ -78,26 +78,21 @@ final class TrackDataStoreImpl: TrackDataStore, Request {
 
             APIClient.request(request: self)
                 .success { result in
-                    Logger.debug(message: "APIClient.request: success")
-
                     if result.resultCount == 0 {
                         reject(ITunesSearchError(kind: .empty))
                         return
                     }
                     fulfill(result)
-
+                    
                 }.failure { error in
                     Logger.debug(message: "APIClient.request: failure")
                     Logger.error(message: "error: \(error)")
-
+                    
                     guard let apiError = error.error else {
                         reject(ITunesSearchError(kind: .searchFailed))
                         return
                     }
                     reject(determineAPIErrorType(apiError: apiError))
-
-                }.then { _, _ in
-                    Logger.debug(message: "APIClient.request: done")
             }
         }
         return task
