@@ -9,7 +9,7 @@
 import UIKit
 
 protocol TrackIconViewInput: class {
-    func setTrackIconEntity(trackIconEntity: TrackIconEntity)
+    func setTrackIconModel(trackIconModel: TrackIconModel)
 }
 
 final class TrackTableViewCell: UITableViewCell {
@@ -50,12 +50,8 @@ final class TrackTableViewCell: UITableViewCell {
 
 // MARK: - TrackIconViewInput
 extension TrackTableViewCell: TrackIconViewInput {
-
-    func setTrackIconEntity(trackIconEntity: TrackIconEntity) {
-
-        if let imageData = trackIconEntity.imageData {
-            iconImageView.image = UIImage(data: imageData)
-            return
-        }
+    
+    func setTrackIconModel(trackIconModel: TrackIconModel) {
+        iconImageView.image = trackIconModel.trackIcon
     }
 }

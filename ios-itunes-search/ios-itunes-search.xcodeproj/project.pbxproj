@@ -27,6 +27,9 @@
 		B6333FFF20A2320A00372507 /* TrackIconUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6333FFE20A2320A00372507 /* TrackIconUseCase.swift */; };
 		B633400120A232DF00372507 /* TrackIconPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B633400020A232DF00372507 /* TrackIconPresenter.swift */; };
 		B633400320A3564800372507 /* Nuke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B633400220A3564800372507 /* Nuke.framework */; };
+		B633400A20A48B1D00372507 /* Translator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B633400920A48B1D00372507 /* Translator.swift */; };
+		B633400C20A48CF100372507 /* TrackIconTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B633400B20A48CF100372507 /* TrackIconTranslator.swift */; };
+		B633400F20A48DEF00372507 /* TrackIconModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B633400E20A48DEF00372507 /* TrackIconModel.swift */; };
 		B638586B1F7745220004A562 /* UTRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = B638586A1F7745220004A562 /* UTRealm.swift */; };
 		B638586C1F7747260004A562 /* UTRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = B638586A1F7745220004A562 /* UTRealm.swift */; };
 		B63858761F774DBD0004A562 /* TrackTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63858751F774DBD0004A562 /* TrackTableViewCellTests.swift */; };
@@ -82,6 +85,9 @@
 		B6333FFE20A2320A00372507 /* TrackIconUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackIconUseCase.swift; sourceTree = "<group>"; };
 		B633400020A232DF00372507 /* TrackIconPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackIconPresenter.swift; sourceTree = "<group>"; };
 		B633400220A3564800372507 /* Nuke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nuke.framework; path = Carthage/Build/iOS/Nuke.framework; sourceTree = "<group>"; };
+		B633400920A48B1D00372507 /* Translator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translator.swift; sourceTree = "<group>"; };
+		B633400B20A48CF100372507 /* TrackIconTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackIconTranslator.swift; sourceTree = "<group>"; };
+		B633400E20A48DEF00372507 /* TrackIconModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackIconModel.swift; sourceTree = "<group>"; };
 		B638586A1F7745220004A562 /* UTRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UTRealm.swift; sourceTree = "<group>"; };
 		B63858751F774DBD0004A562 /* TrackTableViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTableViewCellTests.swift; sourceTree = "<group>"; };
 		B63858791F7751280004A562 /* SearchViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControllerTests.swift; sourceTree = "<group>"; };
@@ -205,6 +211,7 @@
 		B6333FCC20A0B9ED00372507 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B633400E20A48DEF00372507 /* TrackIconModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -214,6 +221,7 @@
 			children = (
 				B6333FE820A0CF2300372507 /* TrackUseCase.swift */,
 				B6333FFE20A2320A00372507 /* TrackIconUseCase.swift */,
+				B633400820A48B0C00372507 /* Translator */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -364,6 +372,15 @@
 				B63858751F774DBD0004A562 /* TrackTableViewCellTests.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		B633400820A48B0C00372507 /* Translator */ = {
+			isa = PBXGroup;
+			children = (
+				B633400920A48B1D00372507 /* Translator.swift */,
+				B633400B20A48CF100372507 /* TrackIconTranslator.swift */,
+			);
+			path = Translator;
 			sourceTree = "<group>";
 		};
 		B64758A21F765A4F005BD438 /* Common */ = {
@@ -562,12 +579,14 @@
 				B67CFFAE1F757B7500018FB4 /* SearchViewController.swift in Sources */,
 				B638586C1F7747260004A562 /* UTRealm.swift in Sources */,
 				B6333FDB20A0C19200372507 /* APIClient.swift in Sources */,
+				B633400A20A48B1D00372507 /* Translator.swift in Sources */,
 				B6333FD820A0BF9E00372507 /* TrackEntity.swift in Sources */,
 				B6333FF920A217EC00372507 /* TrackIconDataStore.swift in Sources */,
 				B6333FE520A0C7B600372507 /* ITunesSearchErrorEntity.swift in Sources */,
 				B6333FEB20A0D2F000372507 /* TrackPresenter.swift in Sources */,
 				B6333FE720A0C86E00372507 /* TrackRepository.swift in Sources */,
 				B6333FDD20A0C1AC00372507 /* Request.swift in Sources */,
+				B633400F20A48DEF00372507 /* TrackIconModel.swift in Sources */,
 				B67CFF861F757A8800018FB4 /* AppDelegate.swift in Sources */,
 				B678DBF61F75F02C0013A2E7 /* RealmDaoHelper.swift in Sources */,
 				B678DC041F75FA820013A2E7 /* EmptyTableViewCell.swift in Sources */,
@@ -583,6 +602,7 @@
 				B6333FED20A20B3800372507 /* CellType.swift in Sources */,
 				B6333FFD20A2318F00372507 /* TrackIconRepository.swift in Sources */,
 				B6333FE320A0C6B000372507 /* Error+Helper.swift in Sources */,
+				B633400C20A48CF100372507 /* TrackIconTranslator.swift in Sources */,
 				B633400120A232DF00372507 /* TrackIconPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

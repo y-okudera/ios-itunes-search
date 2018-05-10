@@ -10,7 +10,7 @@ import SwiftTask
 
 // MARK: - Interface
 protocol TrackIconUseCase {
-    func fetchTrackIcon(track: TrackEntity) -> Task<Float, TrackIconEntity, TrackIconFetchError>
+    func fetchTrackIcon(track: TrackEntity) -> Task<Float, TrackIconModel, TrackIconFetchError>
 }
 
 // MARK: - Implementation
@@ -22,7 +22,28 @@ final class TrackIconUseCaseImpl: TrackIconUseCase {
         self.trackIconRepository = trackIconRepository
     }
 
-    func fetchTrackIcon(track: TrackEntity) -> Task<Float, TrackIconEntity, TrackIconFetchError> {
-        return trackIconRepository.fetchTrackIcon(track: track)
+    func fetchTrackIcon(track: TrackEntity) -> Task<Float, TrackIconModel, TrackIconFetchError> {
+
+        let task = Task<Float, TrackIconModel, TrackIconFetchError> { [weak self] progress, fulfill, reject, configure in
+
+            self?.trackIconRepository.fetchTrackIcon(track: track)
+                .success { trackIconEntity in
+                    let translator = TrackIconTranslator()
+                    let trackIconModel = translator.translate(trackIconEntity)
+                    fulfill(trackIconModel)
+
+                }.failure { error in
+                    Logger.error(message: "trackIconRepository.fetchTrackIcon error: \(error)")
+                    if let trackIconFetchError = error.error {
+                        reject(trackIconFetchError)
+                    } else {
+                        reject(TrackIconFetchError(kind: .downloadFailed))
+                    }
+
+                }.then { _, _ in
+                    Logger.debug(message: "trackIconRepository.fetchTrackIcon: done")
+            }
+        }
+        return task
     }
 }

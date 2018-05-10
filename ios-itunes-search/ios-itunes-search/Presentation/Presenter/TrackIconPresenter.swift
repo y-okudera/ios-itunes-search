@@ -26,9 +26,9 @@ final class TrackIconPresenterImpl: TrackIconPresenter {
     func fetchTrackIcon(track: TrackEntity) {
 
         useCase.fetchTrackIcon(track: track)
-            .success { trackIconEntity in
+            .success { trackIconModel in
                 Logger.debug(message: "fetchTrackIcon: success")
-                self.loadedTrackIcon(trackIconEntity: trackIconEntity)
+                self.loadedTrackIcon(trackIconModel: trackIconModel)
 
             }.failure { error in
                 Logger.debug(message: "fetchTrackIcon: failure")
@@ -40,9 +40,9 @@ final class TrackIconPresenterImpl: TrackIconPresenter {
     }
 
     // MARK: - Private
-    private func loadedTrackIcon(trackIconEntity: TrackIconEntity) {
+    private func loadedTrackIcon(trackIconModel: TrackIconModel) {
         DispatchQueue.main.async { [weak self] in
-            self?.viewInput?.setTrackIconEntity(trackIconEntity: trackIconEntity)
+            self?.viewInput?.setTrackIconModel(trackIconModel: trackIconModel)
         }
     }
 }
