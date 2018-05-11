@@ -33,7 +33,6 @@ final class SearchViewController: UIViewController {
 
     private func setup() {
         searchBar.enablesReturnKeyAutomatically = true
-        tableView.tableFooterView = UIView()
         tableView.delegate = self
         tableView.dataSource = self
         setupPresenter()

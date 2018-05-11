@@ -30,14 +30,17 @@ final class TrackTableViewCell: UITableViewCell {
     var item: TrackEntity? {
         didSet { set(track: item) }
     }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setupPresenter()
+    }
     
     private func set(track: TrackEntity?) {
-        trackNameLabel.text = track?.trackName
-        iconImageView.image = nil
-
-        setupPresenter()
         guard let track = track else { return }
+        iconImageView.image = nil
         presenter?.fetchTrackIcon(track: track)
+        trackNameLabel.text = track.trackName
     }
 
     private func setupPresenter() {
