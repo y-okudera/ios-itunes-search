@@ -18,23 +18,22 @@ protocol TrackIconDataStore {
 
 // MARK: - Implementation
 final class TrackIconDataStoreImpl: TrackIconDataStore {
-    
+
     func fetchTrackIcon(track: TrackEntity) -> Task<Float, TrackIconEntity, TrackIconFetchError> {
 
-        let task = Task<Float, TrackIconEntity, TrackIconFetchError> { progress, fulfill, reject, configure in
+        let task = Task<Float, TrackIconEntity, TrackIconFetchError> { [weak self] progress, fulfill, reject, configure in
 
-            DispatchQueue.main.async { [weak self] in
-                if let icon = self?.findByID(trackId: track.trackId) {
-                    fulfill(icon)
-                    return
-                }
+            if let icon = self?.findByID(trackId: track.trackId) {
+                Logger.debug(message: "DBから画像を読み込む")
+                fulfill(icon)
+                return
             }
-
             guard let imageUrl = URL(string: track.artworkUrl100) else { return }
 
-            Alamofire.SessionManager.default.request(imageUrl).response(completionHandler: { response in
+            Logger.debug(message: "画像をダウンロードする")
+            ImagePipeline.shared.loadImage(with: imageUrl, completion: { imageResponse, error in
 
-                if let error = response.error {
+                if let error = error {
                     Logger.error(message: "Failed to download icon.\n->\(error.localizedDescription)")
                     if error.isOffline || error.isTimeout {
                         reject(TrackIconFetchError(kind: .unreachable))
@@ -44,18 +43,16 @@ final class TrackIconDataStoreImpl: TrackIconDataStore {
                     return
                 }
 
-                guard let data = response.data else {
+                guard let image = imageResponse?.image else {
                     reject(TrackIconFetchError(kind: .downloadFailed))
                     return
                 }
 
-                DispatchQueue.main.async { [weak self] in
-                    let downloadedIcon = TrackIconEntity()
-                    downloadedIcon.trackId = track.trackId
-                    downloadedIcon.imageData = data
-                    self?.add(entity: downloadedIcon)
-                    fulfill(TrackIconEntity(value: downloadedIcon))
-                }
+                let downloadedIcon = TrackIconEntity()
+                downloadedIcon.trackId = track.trackId
+                downloadedIcon.imageData = UIImagePNGRepresentation(image)
+                self?.add(entity: downloadedIcon)
+                fulfill(TrackIconEntity(value: downloadedIcon))
             })
         }
         return task
