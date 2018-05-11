@@ -26,31 +26,36 @@ struct APIClient {
 
         let task = Task<Float, T.Response, APIError> { progress, fulfill, reject, configure in
 
-            let request = Alamofire.request(endPoint, method: method, parameters: parameters, encoding: URLEncoding.default, headers: headers)
+            let request = Alamofire.request(
+                endPoint,
+                method: method,
+                parameters: parameters,
+                encoding: URLEncoding.default,
+                headers: headers
+                )
                 .validate(statusCode: 200 ..< 300)
                 .responseData(completionHandler: { response in
-
+                    
                     if let error = response.result.error {
                         reject(.connectionError(error))
                         return
                     }
-
+                    
                     guard
                         let responseData = response.result.value,
                         let urlResponse = response.response else {
                             reject(.invalidResponse)
                             return
                     }
-
+                    
                     guard let model = request.responseFromData(data: responseData, urlResponse: urlResponse) else {
                         reject(.parseError(responseData))
                         return
                     }
-
+                    
                     fulfill(model)
                 })
 
-            Logger.debug(message: "\(request)")
             Logger.debug(message: request.debugDescription)
         }
         return task

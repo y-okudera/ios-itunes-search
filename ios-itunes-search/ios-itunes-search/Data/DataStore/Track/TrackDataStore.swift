@@ -55,11 +55,11 @@ final class TrackDataStoreImpl: TrackDataStore, Request {
             case .connectionError(let error):
 
                 if error.isOffline {
-                    Logger.debug(message: "isOffline")
+                    Logger.error(message: "isOffline")
                     return ITunesSearchError(kind: .unreachable)
                 }
                 if error.isTimeout {
-                    Logger.debug(message: "isTimeout")
+                    Logger.error(message: "isTimeout")
                     return ITunesSearchError(kind: .unreachable)
                 }
                 return ITunesSearchError(kind: .searchFailed)
@@ -69,7 +69,7 @@ final class TrackDataStoreImpl: TrackDataStore, Request {
 
             case .parseError(let responseData):
 
-                Logger.debug(message: "responseData: \(String(data: responseData, encoding: .utf8) ?? "")")
+                Logger.error(message: "responseData: \(String(data: responseData, encoding: .utf8) ?? "")")
                 return ITunesSearchError(kind: .searchFailed)
             }
         }
@@ -85,7 +85,7 @@ final class TrackDataStoreImpl: TrackDataStore, Request {
                     fulfill(result)
                     
                 }.failure { error in
-                    Logger.debug(message: "APIClient.request: failure")
+                    Logger.error(message: "APIClient.request: failure")
                     Logger.error(message: "error: \(error)")
                     
                     guard let apiError = error.error else {

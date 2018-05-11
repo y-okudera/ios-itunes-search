@@ -43,8 +43,6 @@ extension Request where Response: Codable {
 
     func responseFromData(data: Data, urlResponse: HTTPURLResponse) -> Response? {
 
-        Logger.debug(message: "\(urlResponse)")
-
         let model = try? JSONDecoder().decode(Response.self, from: data)
         return model
     }

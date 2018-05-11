@@ -44,7 +44,7 @@ final class TrackPresenterImpl: TrackPresenter {
                 self.loadedTracks(tracks: tracks)
                 
             }.failure { error in
-                Logger.debug(message: "searchTracks: failure")
+                Logger.error(message: "searchTracks: failure")
                 Logger.error(message: "error: \(error)")
                 
                 if let iTunesSearchError = error.error {
