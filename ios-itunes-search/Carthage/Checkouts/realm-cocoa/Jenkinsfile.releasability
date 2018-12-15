@@ -1,7 +1,8 @@
-swiftVersions = ['3.1', '3.2', '3.2.2', '3.2.3', '3.3', '4.0', '4.0.2', '4.0.3', '4.1']
+swiftVersions = ['3.2.3', '3.3', '3.3.2', '3.4', '3.4.1', '4.0.3', '4.1', '4.1.2', '4.2', '4.2.1']
 platforms = ['osx', 'ios', 'watchos', 'tvos']
 platformNames = ['osx': 'macOS', 'ios': 'iOS', 'watchos': 'watchOS', 'tvos': 'tvOS']
-carthageXcodeVersion = '9.3'
+carthageXcodeVersion = '10.1'
+carthageSwiftVersion = '3.4.1'
 
 def installationTest(platform, test, language) {
   return {
@@ -23,6 +24,9 @@ def installationTest(platform, test, language) {
         find . -name 'realm-${language}-*' -print0 | xargs -J% mv % realm-${language}-latest
       fi
 
+      sed -i '' 's/swift-3.[0-9.]*/swift-${carthageSwiftVersion}/g' osx/swift/DynamicExample/DynamicExample.xcodeproj/project.pbxproj
+      sed -i '' 's/swift-3.[0-9.]*/swift-${carthageSwiftVersion}/g' ios/swift/DynamicExample/DynamicExample.xcodeproj/project.pbxproj
+      export REALM_XCODE_VERSION=${carthageXcodeVersion}
       ./build.sh test-${platform}-${language}-${test}
       """
     }
@@ -272,34 +276,5 @@ try {
   // If there was an exception thrown, the build failed
   currentBuild.result = "FAILED"
   throw e
-} finally {
-  // Success or failure, always send notifications
-  notifyBuild(currentBuild.result, '#cocoa-team')
 }
 
-def notifyBuild(String buildStatus = 'STARTED', String channel) {
-  // build status of null means successful
-  buildStatus =  buildStatus ?: 'SUCCESSFUL'
-
-  // Default values
-  def colorName = 'RED'
-  def colorCode = '#FF0000'
-  def subject = "${buildStatus}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'"
-  def summary = "${subject} (${env.BUILD_URL})"
-  def details = """<p>STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
-    <p>Check console output at &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>"""
-
-  // Override default values based on build status
-  if (buildStatus == 'STARTED') {
-    color = 'YELLOW'
-    colorCode = '#FFFF00'
-  } else if (buildStatus == 'SUCCESSFUL') {
-    color = 'GREEN'
-    colorCode = '#00FF00'
-  } else {
-    color = 'RED'
-    colorCode = '#FF0000'
-  }
-
-  slackSend(channel: channel, color: colorCode, message: summary)
-}

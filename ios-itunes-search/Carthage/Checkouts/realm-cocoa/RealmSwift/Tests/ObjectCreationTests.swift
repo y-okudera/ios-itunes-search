@@ -20,6 +20,17 @@ import XCTest
 import RealmSwift
 import Realm.Private
 
+class ObjectWithPrivateOptionals: Object {
+    private var nilInt: Int?
+    private var nilFloat: Float?
+    private var nilString: String?
+    private var int: Int? = 123
+    private var float: Float? = 1.23
+    private var string: String? = "123"
+
+    @objc dynamic var value = 5
+}
+
 class ObjectCreationTests: TestCase {
 
     // MARK: Init tests
@@ -752,6 +763,16 @@ class ObjectCreationTests: TestCase {
         XCTAssertEqual(object.parentSecondNumber, 200)
         XCTAssertTrue(object.firstLinking.count == 0)
         XCTAssertTrue(object.secondLinking.count == 0)
+    }
+
+    func testPrivateOptionalNonobjcString() {
+        let realm = try! Realm()
+        try! realm.write {
+            let obj = ObjectWithPrivateOptionals()
+            obj.value = 5
+            realm.add(obj)
+            XCTAssertEqual(realm.objects(ObjectWithPrivateOptionals.self).first!.value, 5)
+        }
     }
 
     // MARK: Private utilities

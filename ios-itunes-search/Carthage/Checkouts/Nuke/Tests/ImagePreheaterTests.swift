@@ -3,7 +3,7 @@
 // Copyright (c) 2015-2018 Alexander Grebenyuk (github.com/kean).
 
 import XCTest
-import Nuke
+@testable import Nuke
 
 class ImagePreheaterTests: XCTestCase {
     var pipeline: MockImagePipeline!
@@ -12,16 +12,70 @@ class ImagePreheaterTests: XCTestCase {
     override func setUp() {
         super.setUp()
 
-        pipeline = MockImagePipeline()
+        pipeline = MockImagePipeline {
+            $0.imageCache = nil
+        }
         preheater = ImagePreheater(pipeline: pipeline)
     }
-    
-    // MARK: Starting and Stoping Preheating
+
+    // MARK: - Starting Preheating
+
+    func testStartPreheatingWithTheSameRequests() {
+        pipeline.queue.isSuspended = true
+
+        // When starting preheating for the same requests (same cacheKey, loadKey).
+        expect(pipeline.queue).toFinishWithEnqueuedOperationCount(1)
+
+        let request = Test.request
+        preheater.startPreheating(with: [request])
+        preheater.startPreheating(with: [request])
+
+        wait()
+    }
+
+    func testStartPreheatingWithDifferentProcessors() {
+        pipeline.queue.isSuspended = true
+
+        // When starting preheating for the requests with the same URL (same loadKey)
+        // but different processors (different cacheKey).
+        expect(pipeline.queue).toFinishWithEnqueuedOperationCount(2)
+
+        preheater.startPreheating(with: [Test.request.processed(key: "1") { $0 }])
+        preheater.startPreheating(with: [Test.request.processed(key: "2") { $0 }])
+
+        wait()
+    }
+
+    func testStartPreheatingSameProcessorsDifferentURLRequests() {
+        pipeline.queue.isSuspended = true
+
+        // When starting preheating for the requests with the same URL, but
+        // different URL requests (different loadKey) but the same processors
+        // (same cacheKey).
+        expect(pipeline.queue).toFinishWithEnqueuedOperationCount(2)
+
+        preheater.startPreheating(with: [ImageRequest(urlRequest: URLRequest(url: Test.url, cachePolicy: .returnCacheDataDontLoad, timeoutInterval: 100))])
+        preheater.startPreheating(with: [ImageRequest(urlRequest: URLRequest(url: Test.url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 100))])
+
+        wait()
+    }
+
+    func testStartingPreheatingWithURLS() {
+        pipeline.queue.isSuspended = true
+
+        expect(pipeline.queue).toFinishWithEnqueuedOperationCount(1)
+
+        preheater.startPreheating(with: [Test.url])
+
+        wait()
+    }
+
+    // MARK: - Stoping Preheating
 
     func testThatPreheatingRequestsAreStopped() {
         pipeline.queue.isSuspended = true
 
-        let request = ImageRequest(url: defaultURL)
+        let request = Test.request
         _ = expectNotification(MockImagePipeline.DidStartTask, object: pipeline)
         preheater.startPreheating(with: [request])
         wait()
@@ -34,10 +88,9 @@ class ImagePreheaterTests: XCTestCase {
     func testThatEquaivalentRequestsAreStoppedWithSingleStopCall() {
         pipeline.queue.isSuspended = true
 
-        let request = ImageRequest(url: defaultURL)
+        let request = Test.request
         _ = expectNotification(MockImagePipeline.DidStartTask, object: pipeline)
         preheater.startPreheating(with: [request, request])
-        preheater.startPreheating(with: [request])
         wait()
 
         _ = expectNotification(MockImagePipeline.DidCancelTask, object: pipeline)
@@ -51,7 +104,7 @@ class ImagePreheaterTests: XCTestCase {
     func testThatAllPreheatingRequestsAreStopped() {
         pipeline.queue.isSuspended = true
 
-        let request = ImageRequest(url: defaultURL)
+        let request = Test.request
         _ = expectNotification(MockImagePipeline.DidStartTask, object: pipeline)
         preheater.startPreheating(with: [request])
         wait()
@@ -59,26 +112,5 @@ class ImagePreheaterTests: XCTestCase {
         _ = expectNotification(MockImagePipeline.DidCancelTask, object: pipeline)
         preheater.stopPreheating()
         wait()
-    }
-    
-    // MARK: Thread Safety
-    
-    func testPreheatingThreadSafety() {
-        func makeRequests() -> [ImageRequest] {
-            return (0...rnd(30)).map { _ in
-                return ImageRequest(url: URL(string: "http://\(rnd(15))")!)
-            }
-        }
-        for _ in 0...1000 {
-            expect { fulfill in
-                DispatchQueue.global().asyncAfter(deadline: .now() + Double(rnd(1))) {
-                    self.preheater.stopPreheating(with: makeRequests())
-                    self.preheater.startPreheating(with: makeRequests())
-                    fulfill()
-                }
-            }
-        }
-        
-        wait(10)
     }
 }

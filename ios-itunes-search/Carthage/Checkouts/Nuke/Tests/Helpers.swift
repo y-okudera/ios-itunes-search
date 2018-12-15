@@ -7,39 +7,40 @@ import XCTest
 
 private final class BundleToken {}
 
-let defaultURL = Test.url
-let defaultImage = Test.image
-
 // Test data.
 enum Test {
-    static func data(name: String, extension ext: String) -> Data {
+    static func url(forResource name: String, extension ext: String) -> URL {
         let bundle = Bundle(for: BundleToken.self)
-        let URL = bundle.url(forResource: name, withExtension: ext)
-        return try! Data(contentsOf: URL!)
+        return bundle.url(forResource: name, withExtension: ext)!
+    }
+
+    static func data(name: String, extension ext: String) -> Data {
+        let url = self.url(forResource: name, extension: ext)
+        return try! Data(contentsOf: url)
     }
 
     static let url = URL(string: "http://test.com")!
 
+    static let data: Data = Test.data(name: "fixture", extension: "jpeg")
+
     static let image: Image = {
-        let bundle = Bundle(for: BundleToken.self)
-        let URL = bundle.url(forResource: "fixture", withExtension: "jpeg")
-        let data = try! Data(contentsOf: URL!)
+        let data = Test.data(name: "fixture", extension: "jpeg")
         return Nuke.ImageDecoder().decode(data: data, isFinal: true)!
     }()
 
     static let request = ImageRequest(
-        url: defaultURL
+        url: Test.url
     )
 
     static let urlResponse = HTTPURLResponse(
-        url: defaultURL,
+        url: Test.url,
         mimeType: "jpeg",
         expectedContentLength: 22_789,
         textEncodingName: nil
     )
 
     static let response = ImageResponse(
-        image: defaultImage,
+        image: Test.image,
         urlResponse: urlResponse
     )
 }

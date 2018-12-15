@@ -19,7 +19,7 @@ class MockDataLoader: DataLoading {
     static let DidCancelTask = Notification.Name("com.github.kean.Nuke.Tests.MockDataLoader.DidCancelTask")
     
     var createdTaskCount = 0
-    var results = [URL: _Result<(Data, URLResponse)>]()
+    var results = [URL: _Result<(Data, URLResponse), NSError>]()
     let queue = OperationQueue()
 
     func loadData(with request: URLRequest, didReceiveData: @escaping (Data, URLResponse) -> Void, completion: @escaping (Error?) -> Void) -> Cancellable {
@@ -29,7 +29,7 @@ class MockDataLoader: DataLoading {
 
         createdTaskCount += 1
 
-        let operation = BlockOperation() {
+        let operation = BlockOperation {
             if let result = self.results[request.url!] {
                 switch result {
                 case let .success(val):
@@ -54,5 +54,22 @@ class MockDataLoader: DataLoading {
         }
 
         return task
+    }
+}
+
+// MARK: - Result
+
+// we're still using Result internally, but don't pollute user's space
+internal enum _Result<T, Error: Swift.Error> {
+    case success(T), failure(Error)
+
+    /// Returns a `value` if the result is success.
+    var value: T? {
+        if case let .success(val) = self { return val } else { return nil }
+    }
+
+    /// Returns an `error` if the result is failure.
+    var error: Error? {
+        if case let .failure(err) = self { return err } else { return nil }
     }
 }

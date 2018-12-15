@@ -1,5 +1,5 @@
-github "Alamofire/Alamofire" "4.7.2"
+github "Alamofire/Alamofire" "4.8.0"
 github "ReactKit/SwiftTask" "14ce2959660e06cd34a890306607c84fe956f497"
 github "SVProgressHUD/SVProgressHUD" "2.2.5"
-github "kean/Nuke" "7.0-rc1"
-github "realm/realm-cocoa" "v3.5.0"
+github "kean/Nuke" "7.5.1"
+github "realm/realm-cocoa" "v3.13.0"

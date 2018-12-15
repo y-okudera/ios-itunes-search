@@ -50,7 +50,7 @@ final class TrackIconDataStoreImpl: TrackIconDataStore {
 
                 let downloadedIcon = TrackIconEntity()
                 downloadedIcon.trackId = track.trackId
-                downloadedIcon.imageData = UIImagePNGRepresentation(image)
+                downloadedIcon.imageData = image.pngData()
                 self?.add(entity: downloadedIcon)
                 fulfill(TrackIconEntity(value: downloadedIcon))
             })

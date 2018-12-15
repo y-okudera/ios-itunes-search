@@ -32,7 +32,8 @@ public final class ImageDecoder: ImageDecoding {
     // Number of scans that the decoder has found so far. The last scan might be
     // incomplete at this point.
     private(set) internal var numberOfScans = 0
-    private var scannedIndex: Int = 0 // Index at which previous scan was finished
+    private var lastStartOfScan: Int = 0 // Index of the last Start of Scan that we found
+    private var scannedIndex: Int = -1 // Index at which previous scan was finished
 
     public init() { }
 
@@ -54,28 +55,29 @@ public final class ImageDecoder: ImageDecoding {
         guard isProgressive == true else { return nil }
 
         // Check if there is more data to scan.
-        guard scannedIndex < data.count else { return nil }
+        guard (scannedIndex + 1) < data.count else { return nil }
 
         // Start scaning from the where we left off previous time.
-        var index = scannedIndex
+        var index = (scannedIndex + 1)
         var numberOfScans = self.numberOfScans
         while index < (data.count - 1) {
             scannedIndex = index
             // 0xFF, 0xDA - Start Of Scan
             if data[index] == 0xFF, data[index+1] == 0xDA {
+                lastStartOfScan = index
                 numberOfScans += 1
             }
             index += 1
         }
 
-        // Found more scans this time
+        // Found more scans this the previous time
         guard numberOfScans > self.numberOfScans else { return nil }
         self.numberOfScans = numberOfScans
 
         // `> 1` checks that we've received a first scan (SOS) and then received
         // and also received a second scan (SOS). This way we know that we have
         // at least one full scan available.
-        return numberOfScans > 1 ? _decode(data) : nil
+        return (numberOfScans > 1 && lastStartOfScan > 0) ? _decode(data[0..<lastStartOfScan]) : nil
     }
 }
 
@@ -132,6 +134,17 @@ public final class ImageDecoderRegistry {
     public func register(_ match: @escaping (ImageDecodingContext) -> ImageDecoding?) {
         matches.insert(match, at: 0)
     }
+
+    func clear() {
+        matches = []
+    }
+}
+
+/// Image decoding context used when selecting which decoder to use.
+public struct ImageDecodingContext {
+    public let request: ImageRequest
+    internal let urlResponse: URLResponse?
+    public let data: Data
 }
 
 // MARK: - Image Formats
@@ -186,11 +199,21 @@ enum ImageFormat: Equatable {
 
     private static func _match(_ data: Data, _ numbers: [UInt8]) -> Bool {
         guard data.count >= numbers.count else { return false }
-        for (i, number) in zip(numbers.indices, numbers) {
-            if data[i] != number { return false }
+        return !zip(numbers.indices, numbers).contains { (index, number) in
+            data[index] != number
         }
-        return true
     }
+
+    #if !swift(>=4.1)
+    static func == (lhs: ImageFormat, rhs: ImageFormat) -> Bool {
+        switch (lhs, rhs) {
+        case let (.jpeg(lhs), .jpeg(rhs)): return lhs == rhs
+        case (.png, .png): return true
+        case (.gif, .gif): return true
+        default: return false
+        }
+    }
+    #endif
 }
 
 // MARK: - Animated Images
