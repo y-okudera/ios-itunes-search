@@ -1,5 +1,5 @@
 # ios-itunes-search
-第十回スキルアップ実践編テスト（Xcode 9.3 / Swift 4.1）
+第十回スキルアップ実践編テスト（Xcode 10.1 / Swift 4.2.1）
 
 # Carthage
 |Library|Description|
