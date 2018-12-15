@@ -51,7 +51,7 @@ final class TrackPresenterImpl: TrackPresenter {
                     Logger.error(message: "error message: \(iTunesSearchError.message)")
                     self.errorHandling(error: iTunesSearchError)
                 } else {
-                    let searchFailedMessage = NSLocalizedString("ITUNES_SEARCH_FAILED", comment: "")
+                    let searchFailedMessage = "ITUNES_SEARCH_FAILED".localized()
                     self.viewInput?.changedStatus(status: .searchFailed(message: searchFailedMessage))
                 }
         }

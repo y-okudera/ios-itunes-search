@@ -47,7 +47,7 @@ final class SearchViewController: UIViewController {
 
     private func clearList() {
         searchBar.text = ""
-        navigationItem.title = NSLocalizedString("SEARCH_MUSIC", comment: "")
+        navigationItem.title = "SEARCH_MUSIC".localized()
         tracks = TrackListEntity()
         tableView.reloadData()
     }
@@ -62,7 +62,7 @@ extension SearchViewController: TrackViewInput {
 
     func setTrackListEntity(trackListEntity: TrackListEntity) {
         tracks = trackListEntity
-        navigationItem.title = trackListEntity.results.first?.artistName ?? NSLocalizedString("UNKNOWN", comment: "")
+        navigationItem.title = trackListEntity.results.first?.artistName ?? "UNKNOWN".localized()
         tableView.reloadData()
     }
 

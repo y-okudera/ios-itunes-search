@@ -12,12 +12,12 @@ extension UIViewController {
 
     func showAlert(warningMessage: String) {
         let alert = UIAlertController(
-            title: NSLocalizedString("WARNING", comment: ""),
+            title: "WARNING".localized(),
             message: warningMessage,
             preferredStyle: .alert
         )
         let okAction = UIAlertAction(
-            title: NSLocalizedString("OK", comment: ""),
+            title: "OK".localized(),
             style: .default,
             handler:nil
         )

@@ -21,11 +21,11 @@ struct ITunesSearchError: Error {
     var message: String {
         switch kind {
         case .empty:
-            return NSLocalizedString("ITUNES_SEARCH_FAILED", comment: "")
+            return "ITUNES_SEARCH_FAILED".localized()
         case .searchFailed:
-            return NSLocalizedString("ITUNES_SEARCH_EMPTY", comment: "")
+            return "ITUNES_SEARCH_EMPTY".localized()
         case .unreachable:
-            return NSLocalizedString("UNREACHABLE", comment: "")
+            return "UNREACHABLE".localized()
         }
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		64EE7DB521C5526B00E861CB /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EE7DB421C5526B00E861CB /* String+Localized.swift */; };
 		B6333FD420A0BB3500372507 /* TrackDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6333FD320A0BB3500372507 /* TrackDataStore.swift */; };
 		B6333FD620A0BEBD00372507 /* SwiftTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6333FD520A0BEBD00372507 /* SwiftTask.framework */; };
 		B6333FD820A0BF9E00372507 /* TrackEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6333FD720A0BF9E00372507 /* TrackEntity.swift */; };
@@ -65,6 +66,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		64EE7DB421C5526B00E861CB /* String+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
 		B6333FD320A0BB3500372507 /* TrackDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDataStore.swift; sourceTree = "<group>"; };
 		B6333FD520A0BEBD00372507 /* SwiftTask.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftTask.framework; path = Carthage/Build/iOS/SwiftTask.framework; sourceTree = "<group>"; };
 		B6333FD720A0BF9E00372507 /* TrackEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackEntity.swift; sourceTree = "<group>"; };
@@ -266,9 +268,9 @@
 			isa = PBXGroup;
 			children = (
 				B6333FDA20A0C19200372507 /* APIClient.swift */,
+				B6333FDE20A0C1C700372507 /* Logger.swift */,
 				B678DBE81F7586220013A2E7 /* RealmDaoHelper.swift */,
 				B6333FDC20A0C1AC00372507 /* Request.swift */,
-				B6333FDE20A0C1C700372507 /* Logger.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -287,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				B6333FE220A0C6B000372507 /* Error+Helper.swift */,
+				64EE7DB421C5526B00E861CB /* String+Localized.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -602,6 +605,7 @@
 				B6333FFB20A2267600372507 /* TrackIconFetchError.swift in Sources */,
 				B6333FD420A0BB3500372507 /* TrackDataStore.swift in Sources */,
 				B6333FED20A20B3800372507 /* CellType.swift in Sources */,
+				64EE7DB521C5526B00E861CB /* String+Localized.swift in Sources */,
 				B6333FFD20A2318F00372507 /* TrackIconRepository.swift in Sources */,
 				B6333FE320A0C6B000372507 /* Error+Helper.swift in Sources */,
 				B633400C20A48CF100372507 /* TrackIconTranslator.swift in Sources */,

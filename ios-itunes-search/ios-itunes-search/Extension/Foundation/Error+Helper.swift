@@ -10,13 +10,23 @@ import Foundation
 
 extension Error {
     
+    /// ドメイン
+    var domain: String {
+        return (self as NSError).domain
+    }
+    
+    /// コード
+    var code: Int {
+        return (self as NSError).code
+    }
+    
     /// タイムアウトかどうか
     var isTimeout: Bool {
-        return (self as NSError).domain == NSURLErrorDomain && (self as NSError).code == NSURLErrorTimedOut
+        return domain == NSURLErrorDomain && code == NSURLErrorTimedOut
     }
-
+    
     /// オフラインかどうか
     var isOffline: Bool {
-        return (self as NSError).domain == NSURLErrorDomain && (self as NSError).code == NSURLErrorNotConnectedToInternet
+        return domain == NSURLErrorDomain && code == NSURLErrorNotConnectedToInternet
     }
 }
